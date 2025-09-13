@@ -9,6 +9,9 @@ builder.Services.AddDbContext<GinDbContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Add dbContext class as service
+builder.Services.AddDbContext<GinDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("")))
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
